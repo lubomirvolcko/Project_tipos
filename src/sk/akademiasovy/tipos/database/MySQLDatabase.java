@@ -50,7 +50,7 @@ public class MySQLDatabase {
 
         }
         catch (Exception e) {
-            System.out.println("Error: I cannot connect to the database");
+            System.out.println("Error: I cannot connect to the database"+e.getMessage());
 
         }
 
