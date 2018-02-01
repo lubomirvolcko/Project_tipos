@@ -9,7 +9,8 @@ public class MySQLDatabase {
     private final String url = "jdbc:mysql://localhost:3306/";  //final == nemenna
     private final String dbName = "tipos"; //meno DB
     private final String driver = "com.mysql.jdbc.Driver";
-    private final String userName = "user2";
+    private final String userName2 = "user2";
+    private final String userName1 = "user1";
     private final String password = "secret";
 
     private Connection conn;
@@ -18,7 +19,7 @@ public class MySQLDatabase {
     {
         try {
             Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url + dbName, userName, password);
+            conn = DriverManager.getConnection(url + dbName, userName2, password);
             if (conn == null) {
                 System.out.println("Connection failed");
             } else
@@ -36,7 +37,7 @@ public class MySQLDatabase {
 
         try {
             Class.forName(driver).newInstance();
-            conn = DriverManager.getConnection(url + dbName, userName, password);
+            conn = DriverManager.getConnection(url + dbName, userName2, password);
             String cmd = "INSERT into draw_history(ball1,ball2,ball3,ball4,ball5) ";
             cmd += "VALUES(?,?,?,?,?)";
             PreparedStatement preparedStatement = conn.prepareStatement(cmd);
@@ -57,5 +58,18 @@ public class MySQLDatabase {
         return true;
     }
 
+    public void getNewBets() {
+        try {
+            Class.forName(driver).newInstance();
+            conn = DriverManager.getConnection(url + dbName, userName1, password);
+            String cmd = "SELECT * FROM bets "+
+                    " INNER JOIN bet_details ON bets.id=bet_details.idb "+
+                    "WHERE bets.draw_id is NULL";
+            PreparedStatement preparedStatement=conn.prepareStatement(conn);
+        }
+        catch (Exception e) {
+            System.out.println("Error: "+e.getMessage());
+        }
+    }
 
 }
