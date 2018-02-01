@@ -1,11 +1,12 @@
 package sk.akademiasovy.tipos;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 public class Tipos
 {
 
 
-
+    private Object list;
 
     public int[] getArr()
     {
@@ -41,4 +42,8 @@ public class Tipos
             System.out.print(arr[i]+" ");
         }
     }
-}
+
+    public void printNewBets(List<Bet>) {
+        if(list==null || list.size()==0)
+    }
+}ctr

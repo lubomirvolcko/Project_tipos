@@ -9,6 +9,43 @@ public class Bet {
     private int draw_id;
     private int bet1;
     private int bet2;
+
+    public int getId() {
+        return id;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public int getDraw_id() {
+        return draw_id;
+    }
+
+    public int getBet1() {
+        return bet1;
+    }
+
+    public int getBet2() {
+        return bet2;
+    }
+
+    public int getBet3() {
+        return bet3;
+    }
+
+    public int getBet4() {
+        return bet4;
+    }
+
+    public int getBet5() {
+        return bet5;
+    }
+
     private int bet3;
     private int bet4;
     private int bet5;
